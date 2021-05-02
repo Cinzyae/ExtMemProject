@@ -1,4 +1,0 @@
-G:\CLion\bin\cmake\win\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" G:\projects\extmem-c
--- Configuring done
--- Generating done
--- Build files have been written to: G:/projects/extmem-c/cmake-build-debug
