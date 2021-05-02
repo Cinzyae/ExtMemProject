@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_C
   "G:/projects/extmem-c/extmem.c" "G:/projects/extmem-c/cmake-build-debug/CMakeFiles/extmem_c.dir/extmem.c.obj"
   "G:/projects/extmem-c/myextmem.c" "G:/projects/extmem-c/cmake-build-debug/CMakeFiles/extmem_c.dir/myextmem.c.obj"
+  "G:/projects/extmem-c/q1.c" "G:/projects/extmem-c/cmake-build-debug/CMakeFiles/extmem_c.dir/q1.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

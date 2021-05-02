@@ -85,6 +85,12 @@
 		<Unit filename="G:/projects/extmem-c/myextmem.c">
 			<Option target="extmem_c"/>
 		</Unit>
+		<Unit filename="G:/projects/extmem-c/q1.c">
+			<Option target="extmem_c"/>
+		</Unit>
+		<Unit filename="G:/projects/extmem-c/q1.h">
+			<Option target="extmem_c"/>
+		</Unit>
 		<Unit filename="G:/projects/extmem-c/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

@@ -196,6 +196,33 @@ myextmem.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\extmem_c.dir\build.make CMakeFiles/extmem_c.dir/myextmem.c.s
 .PHONY : myextmem.c.s
 
+q1.obj: q1.c.obj
+
+.PHONY : q1.obj
+
+# target to build an object file
+q1.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\extmem_c.dir\build.make CMakeFiles/extmem_c.dir/q1.c.obj
+.PHONY : q1.c.obj
+
+q1.i: q1.c.i
+
+.PHONY : q1.i
+
+# target to preprocess a source file
+q1.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\extmem_c.dir\build.make CMakeFiles/extmem_c.dir/q1.c.i
+.PHONY : q1.c.i
+
+q1.s: q1.c.s
+
+.PHONY : q1.s
+
+# target to generate assembly for a file
+q1.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\extmem_c.dir\build.make CMakeFiles/extmem_c.dir/q1.c.s
+.PHONY : q1.c.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -211,6 +238,9 @@ help:
 	@echo ... myextmem.obj
 	@echo ... myextmem.i
 	@echo ... myextmem.s
+	@echo ... q1.obj
+	@echo ... q1.i
+	@echo ... q1.s
 .PHONY : help
 
 
