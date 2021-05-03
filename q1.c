@@ -44,4 +44,5 @@ int q1(Buffer *buf) {
     printf("\n");
     printf("IO's is %d\n", buf->numIO); /* Check the number of IO's */
 
+    return 0;
 }

@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include "extmem.h"
 #include "q1.h"
+#include "q2.h"
 
 int main(int argc, char **argv) {
     Buffer buf;
@@ -10,6 +11,7 @@ int main(int argc, char **argv) {
         perror("Buffer Initialization Failed!\n");
         return -1;
     }
+    /*
     int sw = 0;
     while (1) {
         printf("-------------\ninput code to func:\n");
@@ -27,5 +29,7 @@ int main(int argc, char **argv) {
                 printf("input wrong!\n");
         }
     }
+    */
+    q2(&buf);
 }
 
