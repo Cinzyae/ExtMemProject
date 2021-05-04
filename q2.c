@@ -114,6 +114,8 @@ int SortExt(Buffer *buf, int start, int end) {
                     //装入新的block
                     freeBlockInBuffer(buf->data + MinX * (buf->blkSize + 1) + 1, buf);
                     readBlockFromDisk(Cmark[MinX], buf);
+                    //更新X[]
+                    X[MinX] = getInt(buf->data + MinX * (buf->blkSize + 1) + 1 + 8 * mark[MinX]);
                 }
             } else {
                 X[MinX] = getInt(buf->data + MinX * (buf->blkSize + 1) + 1 + 8 * mark[MinX]);
@@ -264,7 +266,6 @@ void SwapN(unsigned char *addr1, unsigned char *addr2) {
 }
 
 int q2(Buffer *buf) {
-//    SortExt(buf, 1, 7);
     SortExt(buf, 1, 16);
     SortExt(buf, 17, 48);
     return 0;

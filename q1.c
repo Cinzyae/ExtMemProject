@@ -8,6 +8,8 @@
 #include "q1.h"
 
 int q1(Buffer *buf) {
+    int before_search_IO = buf->numIO;
+    int after_search_IO;
     unsigned char *blk; /* A pointer to a block */
     for (int j = 17; j < 49; ++j) {
         /* Read the block from the hard disk */
@@ -40,9 +42,8 @@ int q1(Buffer *buf) {
             freeBuffer(buf);
         }
     }
-
-    printf("\n");
-    printf("IO's is %d\n", buf->numIO); /* Check the number of IO's */
+    after_search_IO = buf->numIO;
+    printf("IO's is %d\n\n", after_search_IO -before_search_IO ); /* Check the number of IO's */
 
     return 0;
 }
