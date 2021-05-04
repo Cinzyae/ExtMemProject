@@ -45,21 +45,11 @@ int SortExt(Buffer *buf, int start, int end) {
         SortCache(buf, CmarkMax[i] - Cmark[i] + 1, Cmark[i], CmarkMax[i]);
         freeBuffer(buf);
     }
-/*
-    printf("\nmerging cache\n");
-    // devide
-    printf("devide:\n");
-    int CmarkMax[7] = {0};
-    int Cmark[7] = {0};
-    for (int i = 0; i < SortRemain; ++i) {
-        Cmark[i] = start + 100 + i * (SortTimes + 1);
-        CmarkMax[i] = start + 100 + (i + 1) * (SortTimes + 1) - 1;
-    }
-    for (int i = 0; i < (7 - SortRemain); ++i) {
-        Cmark[i + SortRemain] = start + 100 + SortRemain * (SortTimes + 1) + i * SortTimes;
-        CmarkMax[i + SortRemain] = start + 100 + SortRemain * (SortTimes + 1) + (i + 1) * SortTimes - 1;
-    }
+
+    printf("\nmerging cache:\n");
     for (int i = 0; i < 7; ++i) {
+        Cmark[i] += 100;
+        CmarkMax[i] += 100;
         printf("[%d,%d] ", Cmark[i], CmarkMax[i]);
     }
     printf("\n");
@@ -83,8 +73,7 @@ int SortExt(Buffer *buf, int start, int end) {
         printf(" %d", X[i]);
     }
     printf("\n");
-*/
-/*
+
     unsigned char *blk;//final block
     blk = buf->data + 7 * (buf->blkSize + 1);
     *blk = BLOCK_UNAVAILABLE;
@@ -105,7 +94,7 @@ int SortExt(Buffer *buf, int start, int end) {
         // modify blk.
         printf("\n%d %d %d %d %d %d %d", X[0], X[1], X[2], X[3], X[4], X[5], X[6]);
         printf("\ntotal %d,block %d,outside block %d,number %d:%d",
-               i, MinX, start + 100 + MinX * 7 + Cmark[MinX], mark[MinX], X[MinX]);
+               i, MinX, Cmark[MinX], mark[MinX], X[MinX]);
 
         if (X[MinX] == MAXINT) {
             break;
@@ -116,9 +105,16 @@ int SortExt(Buffer *buf, int start, int end) {
             memcpy(blk + (i % 7) * 8, buf->data + MinX * (buf->blkSize + 1) + 1 + 8 * mark[MinX], 8);
             mark[MinX]++;
             if (mark[MinX] > 6) {
-
-                mark[MinX] = 6;
-                X[MinX] = MAXINT;
+                Cmark[MinX]++;
+                if (Cmark[MinX] > CmarkMax[MinX]) {
+                    mark[MinX] = 6;
+                    X[MinX] = MAXINT;
+                } else {
+                    mark[MinX] = 0;
+                    //装入新的block
+                    freeBlockInBuffer(buf->data + MinX * (buf->blkSize + 1) + 1, buf);
+                    readBlockFromDisk(Cmark[MinX], buf);
+                }
             } else {
                 X[MinX] = getInt(buf->data + MinX * (buf->blkSize + 1) + 1 + 8 * mark[MinX]);
             }
@@ -140,7 +136,6 @@ int SortExt(Buffer *buf, int start, int end) {
 
     // free buffer
     freeBuffer(buf);
-*/
     return 0;
 }
 
