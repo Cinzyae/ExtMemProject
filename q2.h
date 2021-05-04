@@ -12,7 +12,9 @@
  */
 int q2(Buffer *buf);
 
-int SortCache(Buffer *buf, int BlockNum);//sort blocks in cache
+int SortExt(Buffer *buf, int start, int end);
+
+int SortCache(Buffer *buf, int BlockNum, int start, int end);//sort blocks in cache
 
 int SortBlock(Buffer *buf, int BlockNum);//sort numbers in block
 
