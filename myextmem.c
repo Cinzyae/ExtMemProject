@@ -4,6 +4,7 @@
 #include "q1.h"
 #include "q2.h"
 #include "q3.h"
+#include "q4.h"
 
 int main(int argc, char **argv) {
     Buffer buf;
@@ -17,6 +18,8 @@ int main(int argc, char **argv) {
     while (1) {
         printf("-------------\ninput code to func:\n");
         printf("1. select S.C, S.D from S where S.C = 50\n");
+        printf("2. TPMMS\n");
+        printf("3. select S.C, S.D from S where S.C = 50(base on index)\n");
         printf("your input:");
 
         scanf("%d", &sw);
@@ -34,8 +37,14 @@ int main(int argc, char **argv) {
         }
     }
 */
-    q1(&buf);
-//    q2(&buf);
-    q3(&buf);
+    q4(&buf);
 }
 
+/*
+ * 数据：
+ * 零伯：原始数据
+ * 一伯：块内排序
+ * 二伯；块间排序
+ * 三伯：索引
+ * 四伯：根据索引搜索的结果
+ */

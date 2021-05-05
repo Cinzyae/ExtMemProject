@@ -57,11 +57,11 @@ int buildIndex(Buffer *buf, int start, int end) {
     return 0;
 };
 
-int searchBlock(unsigned char *blk) {
+int searchBlock(unsigned char *blk, int num) {
     int X = -1;
     for (int j = 0; j < 7; ++j) {
         X = getInt(blk + j * 8);
-        if (X > 50) {
+        if (X > num) {
             return j;
         }
     }
@@ -150,7 +150,7 @@ int searchIndex(Buffer *buf, int start, int end) {
         } else {
             printf("%d ", i);
         }
-        Blocknum = searchBlock(blk);
+        Blocknum = searchBlock(blk, 50);
         if (Blocknum > -1) {
             break;
         }

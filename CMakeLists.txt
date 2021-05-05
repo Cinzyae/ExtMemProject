@@ -8,4 +8,4 @@ include_directories(.)
 add_executable(extmem_c
         extmem.c
         extmem.h
-        myextmem.c q1.c q1.h q2.c q2.h q3.c q3.h)
+        myextmem.c q1.c q1.h q2.c q2.h q3.c q3.h q4.c q4.h)
