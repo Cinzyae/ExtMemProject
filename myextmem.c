@@ -48,7 +48,6 @@ int main(int argc, char **argv) {
                 printf("input wrong!\n");
         }
     }
-
 }
 
 /*
@@ -58,4 +57,5 @@ int main(int argc, char **argv) {
  * 二伯；块间排序
  * 三伯：索引
  * 四伯：根据索引搜索的结果
+ * 五伯：连接结果
  */
