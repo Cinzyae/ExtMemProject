@@ -10,6 +10,11 @@
  * 记录IO读写次数，并将选择结果存放在磁盘上。
  * （模拟实现selectS.C, S.D from S where S.C = 50）
  */
+
+int
+writeBlockToDisk4q1(unsigned char *finalblk, int *outputNum, Buffer *buf, int *finalmark,
+                    unsigned char *data);
+
 int q1(Buffer *buf);
 
 #endif //EXTMEM_C_Q1_H
