@@ -9,6 +9,10 @@
 #ifndef EXTMEM_C_Q4_H
 #define EXTMEM_C_Q4_H
 
+int
+writeBlockToDisk4q4(unsigned char *finalblk, int *outputNum, Buffer *buf, int *finalmark,
+                    unsigned char *data);
+
 // while the buf from Cmark,mark to end, find data march num.return data.
 unsigned char *getdata(Buffer *buf, int num, int end, int *Cmark, int *mark);
 

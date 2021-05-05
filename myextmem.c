@@ -13,31 +13,42 @@ int main(int argc, char **argv) {
         perror("Buffer Initialization Failed!\n");
         return -1;
     }
-/*
+
     int sw = 0;
     while (1) {
-        printf("-------------\ninput code to func:\n");
+        printf("\n\n-------------\ninput code to func:\n");
         printf("1. select S.C, S.D from S where S.C = 50\n");
         printf("2. TPMMS\n");
         printf("3. select S.C, S.D from S where S.C = 50(base on index)\n");
+        printf("4. selectS.C, S.D, R.A, R.B from S inner join R on S.C = R.A\n");
+        printf("press 0 to quit\n");
         printf("your input:");
 
         scanf("%d", &sw);
         switch (sw) {
             case 1:
                 q1(&buf);
+                freeBuffer(&buf);
                 break;
             case 2:
                 q2(&buf);
+                freeBuffer(&buf);
                 break;
-            case -1:
+            case 3:
+                q3(&buf);
+                freeBuffer(&buf);
+                break;
+            case 4:
+                q4(&buf);
+                freeBuffer(&buf);
+                break;
+            case 0:
                 return 0;
             default:
                 printf("input wrong!\n");
         }
     }
-*/
-    q4(&buf);
+
 }
 
 /*
