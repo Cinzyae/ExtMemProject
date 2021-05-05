@@ -5,6 +5,7 @@
 #include "q2.h"
 #include "q3.h"
 #include "q4.h"
+#include "q5.h"
 
 int main(int argc, char **argv) {
     Buffer buf;
@@ -21,6 +22,7 @@ int main(int argc, char **argv) {
         printf("2. TPMMS\n");
         printf("3. select S.C, S.D from S where S.C = 50(base on index)\n");
         printf("4. selectS.C, S.D, R.A, R.B from S inner join R on S.C = R.A\n");
+        printf("5. Intersection\n");
         printf("press 0 to quit\n");
         printf("your input:");
 
@@ -42,6 +44,10 @@ int main(int argc, char **argv) {
                 q4(&buf);
                 freeBuffer(&buf);
                 break;
+            case 5:
+                q5(&buf);
+                freeBuffer(&buf);
+                break;
             case 0:
                 return 0;
             default:
@@ -49,7 +55,6 @@ int main(int argc, char **argv) {
         }
     }
 }
-
 /*
  * 数据：
  * 零伯：原始数据
@@ -58,4 +63,5 @@ int main(int argc, char **argv) {
  * 三伯：索引
  * 四伯：根据索引搜索的结果
  * 五伯：连接结果
+ * 六伯：交结果
  */

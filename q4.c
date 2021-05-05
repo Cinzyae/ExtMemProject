@@ -105,7 +105,9 @@ int q4(Buffer *buf) {
         }
         printf("find %d end\n", i);
     }
-    writeBlockToDisk(finalblk, outputNum, buf);
+    if (getInt(finalblk) != 0) {
+        writeBlockToDisk(finalblk, outputNum, buf);
+    }
     printf("\nlink times:%d", count);
     return 0;
 };
